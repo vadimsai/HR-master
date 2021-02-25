@@ -1,0 +1,182 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #121212;
+    background: url("../pages/bg.png");
+
+}
+
+
+.page{
+
+    width: 800px;
+    margin: 20px auto;
+
+}
+
+.header{
+
+    padding: 20px;
+    background-color: #121212;
+}
+
+.head-title{
+
+    margin: 0;
+
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.head-subtitle{
+    margin: 0;
+
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.nav-link{
+    display: inline-block;
+    padding: 10px ;
+    text-decoration: none;
+    color: black;
+
+}
+.nav-link:hover{
+    background-color: cyan;
+}
+
+
+/**/
+
+.content
+{
+
+    padding: 20px;
+}
+
+.content-title{
+
+    margin: 0;
+    font-size: 24px;
+    color: forestgreen;
+}
+
+.read-more{
+
+    color: fuchsia;
+    text-decoration: none;
+}
+
+
+.read-more:hover{
+
+    text-decoration: underline;
+}
+
+.content-text{
+    margin-bottom: 20px;
+}
+
+
+/**/
+.article{
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+
+
+.article-head{
+
+    margin: 0;
+    font-size: 24px;
+    color: forestgreen;
+}
+
+.article a{
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.article a:hover{
+    text-decoration: underline;
+
+}
+
+.article-date{
+    font-size: 12px;
+    color: black;
+}
+
+
+/* Форма */
+
+.form_groop{  /* для каждой мал формы  */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form_input:focus   /* чтобы убрать стандартное подчеркивание при фокусе */
+{
+    outline: none;
+
+}
+.form_input:hover,  /* при наведении курсора */
+.form_input:focus   /* при фокусе*/
+{
+    cursor: pointer;
+    background-color: chartreuse;
+}
+
+.form_submit:hover  /*при наведении курсора для кнопки */
+{
+    cursor: pointer;
+    background-color: chartreuse;
+}
+.form_submit:active  /*при нажатии на кнопку */
+{
+    background-color:gold
+}
+.form_submitd
+{
+    cursor: not-allowed;
+}
+
+.form_g
+{
+    margin-bottom: 20px;   /* внешний отступ (bottom - снизу)*/
+    padding: 20px;    /* внутренний отступ */
+
+    border:10px groove indigo;    /* границы */
+    border-right: dashed;
+    border-right-width: 1px green ;
+
+
+    outline: 3px dashed red;/* внешний отступ, не влияет на размер внутри*/
+    outline-offset: 5px;
+
+
+    font: bold italic 15px/1.5 Arial, sans-serf; /*можно так font- для текста*/
+
+    /* text-decoration: underline overline dotted red; /*подчеркивание сверху, снизу, какое, но лучше по отдельности*/
+}
+
+
+
+/* Шапка окончания стр.*/
+
+.footer{
+
+    padding: 20px;
+    background-color: black;
+    text-align: right;
+    color: blanchedalmond;
+}
