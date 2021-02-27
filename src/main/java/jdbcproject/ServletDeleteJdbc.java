@@ -13,8 +13,13 @@ import java.sql.SQLException;
 @WebServlet( "/ServletDeleteJdbc")
 public class ServletDeleteJdbc extends HttpServlet {
 
-    @Inject
-    OperationsDb operationsDb;
+
+    DbJdbcOperations dbJdbcOperations;
+
+    @Override
+    public void init() throws ServletException {
+        dbJdbcOperations=new OperationsDb();
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -24,9 +29,7 @@ public class ServletDeleteJdbc extends HttpServlet {
 
        int id= Integer.parseInt(request.getParameter("id"));
         System.out.println(id);
-            operationsDb.deleteDB(id);
-        System.out.println(id);
-
+        dbJdbcOperations.deleteDB(id);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
         requestDispatcher.forward(request, response);

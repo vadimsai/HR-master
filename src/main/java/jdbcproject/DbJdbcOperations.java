@@ -7,10 +7,9 @@ import java.util.List;
 
 
 public interface DbJdbcOperations {
-    public String insertDB(String name, String surname, String birthDate, String address);
-    public String deleteDB(int id);
-    public String updateDB(int id, String name, String surname, String birthDate, String address);
-    public List<String> getById(int id);
-    public List<String> getAll();
-    public List<UserJdbc> getall(int id);
+     String insertDB(Users users);
+     String deleteDB(int id);
+     String updateDB(Users users,int id);
+     List<Users> getAll();
+     List<Users> getById(int id);
 }

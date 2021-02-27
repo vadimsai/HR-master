@@ -27,7 +27,7 @@ public class RestService  {
     {
         Users users=new Users(name,surname,birthDate,address);
         String message= dbRestOperation.persist(users);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/GetAll.jsp").
+        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/DB.jsp").
                 queryParam("message",message).build();
 
         return  Response.seeOther(uri).build();
@@ -44,7 +44,7 @@ public class RestService  {
                          @FormParam("address") String address)
     {
         String message= dbRestOperation.merge(id,name,surname,birthDate,address);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/GetAll.jsp").
+        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/DB.jsp").
                 queryParam("messagee",message).build();
 
 
@@ -58,7 +58,7 @@ public class RestService  {
     public Response delete(@FormParam("id") int id)
     {
       String message= dbRestOperation.remove(id);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/GetAll.jsp").
+        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/DB.jsp").
                 queryParam("messag",message).build();
        return  Response.seeOther(uri).build();
     }
