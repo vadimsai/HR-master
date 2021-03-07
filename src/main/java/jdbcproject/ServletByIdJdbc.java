@@ -32,7 +32,7 @@ public class ServletByIdJdbc extends HttpServlet {
         request.setAttribute("listji",listji);
 
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 }

@@ -28,11 +28,11 @@ public class ServletUpdateJdbc extends HttpServlet {
         Users users=new Users();
         users.setName(request.getParameter("name"));
         users.setSurname(request.getParameter("surname"));
-        users.setBirthDate(request.getParameter("birthDate"));
+        users.setEmail(request.getParameter("email"));
         users.setAddress(request.getParameter("address"));
-        dbJdbcOperations.updateDB(users, id);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        String upd=dbJdbcOperations.updateDB(users, id);
+        request.setAttribute("upd",upd);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 

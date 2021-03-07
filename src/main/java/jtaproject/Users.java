@@ -31,9 +31,9 @@ public class Users {
     @Column(name = "surname", nullable = false)
     String surname;
 
-    // @Temporal(TemporalType.DATE)
-    @Column(name = "birthDate")
-    String birthDate;
+
+    @Column(name = "email")
+    String email;
 
 
     @Column(name = "address")
@@ -44,10 +44,10 @@ public class Users {
     public Users() {
     }
 
-    public Users(String name,String surname,String birthDate, String address) {
+    public Users(String name,String surname,String email, String address) {
         this.name = name;
         this.surname = surname;
-        this.birthDate = birthDate;
+        this.email = email;
         this.address = address;
     }
 
@@ -70,12 +70,12 @@ public class Users {
     }
 
 
-    public String getBirthDate() {
-        return birthDate;
+    public String getEmail() {
+        return email;
     }
     @XmlElement
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSurname() {

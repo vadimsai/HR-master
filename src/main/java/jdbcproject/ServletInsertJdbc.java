@@ -27,11 +27,11 @@ public class ServletInsertJdbc extends HttpServlet {
         Users users=new Users();
         users.setName(request.getParameter("name"));
         users.setSurname(request.getParameter("surname"));
-        users.setBirthDate(request.getParameter("birthDate"));
+        users.setEmail(request.getParameter("email"));
         users.setAddress(request.getParameter("address"));
-        dbJdbcOperations.insertDB(users);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        String ins=dbJdbcOperations.insertDB(users);
+        request.setAttribute("ins",ins);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 

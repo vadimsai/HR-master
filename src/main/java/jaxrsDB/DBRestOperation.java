@@ -10,7 +10,7 @@ import java.util.List;
 @Local
 public interface DBRestOperation {
     public String persist(Users user);
-    public String merge(int id, String name, String surname, String birthDate, String address);
+    public String merge(int id, String name, String surname, String email, String address);
     public String remove(int id);
     public List<Users> selectAll();
 }

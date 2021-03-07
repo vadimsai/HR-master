@@ -22,13 +22,13 @@ public class RestService  {
     @Produces({"text/plain"})
     public Response persist(@FormParam("name") String name,
                          @FormParam("surname") String surname,
-                         @FormParam("birthDate") String birthDate,
+                         @FormParam("email") String email,
                          @FormParam("address") String address)
     {
-        Users users=new Users(name,surname,birthDate,address);
+        Users users=new Users(name,surname,email,address);
         String message= dbRestOperation.persist(users);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/DB.jsp").
-                queryParam("message",message).build();
+        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/site2.jsp").
+                queryParam("perr",message).build();
 
         return  Response.seeOther(uri).build();
     }
@@ -40,12 +40,12 @@ public class RestService  {
     public Response update(@FormParam("name") String name,
                          @FormParam("id") int id,
                          @FormParam("surname") String surname,
-                         @FormParam("birthDate") String birthDate,
+                         @FormParam("email") String email,
                          @FormParam("address") String address)
     {
-        String message= dbRestOperation.merge(id,name,surname,birthDate,address);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/DB.jsp").
-                queryParam("messagee",message).build();
+        String message= dbRestOperation.merge(id,name,surname,email,address);
+        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/site2.jsp").
+                queryParam("merr",message).build();
 
 
         return  Response.seeOther(uri).build();
@@ -58,8 +58,8 @@ public class RestService  {
     public Response delete(@FormParam("id") int id)
     {
       String message= dbRestOperation.remove(id);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/DB.jsp").
-                queryParam("messag",message).build();
+        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/site2.jsp").
+                queryParam("remr",message).build();
        return  Response.seeOther(uri).build();
     }
 

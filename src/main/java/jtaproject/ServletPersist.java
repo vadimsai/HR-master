@@ -26,17 +26,17 @@ public class ServletPersist extends HttpServlet {
 
         String name=request.getParameter("name");
         String surname=request.getParameter("surname");
-        String birthDate=request.getParameter("birthDate");
+        String email=request.getParameter("email");
         String address=request.getParameter("address");
-        dbOperations.persist(new Users(name,surname,birthDate,address));
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        String pers=dbOperations.persist(new Users(name,surname,email,address));
+        request.setAttribute("pers",pers);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
 
 

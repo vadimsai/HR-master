@@ -36,23 +36,16 @@ public class ServletEdit extends HttpServlet {
         int id= Integer.parseInt(request.getParameter("id"));
         String name=request.getParameter("name");
         String surname=request.getParameter("surname");
-        String birthDate= request.getParameter("birthDate");
+        String email= request.getParameter("email");
         String address=request.getParameter("address");
-        dbOperations.merge(id,name, surname, birthDate, address);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        String merg=dbOperations.merge(id,name, surname, email, address);
+        request.setAttribute("merg",merg);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-     //   dbOperations.persist(new Users("VadimchikSAIRAM", "Novikov", "17.06.1984", "AUM", "170684", "Maykop", "I am good", "@vad"));
-     //   dbOperations.selectAll();
-     //   dbOperations.remove(21);
-
-
 
     }
 }

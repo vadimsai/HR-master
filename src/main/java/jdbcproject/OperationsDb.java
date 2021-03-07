@@ -9,64 +9,55 @@ public class OperationsDb implements DbJdbcOperations{
 
     @Override
     public String insertDB( Users users){
-
+        if(!(users.getName().equals("")||users.getSurname().equals(""))) {
             Connection connection = SinglConectJdbc.Con();
-          try {
-
-              PreparedStatement prstatement = connection.prepareStatement("insert into users (name,surname,birthDate,address) values(?,?,?,?)");
-              prstatement.setString(1, users.getName());
-              prstatement.setString(2, users.getSurname());
-              prstatement.setString(3, users.getBirthDate());
-              prstatement.setString(4, users.getAddress());
-              prstatement.execute();
-              prstatement.close();
-
-          } catch (SQLException throwables) {
-              throwables.printStackTrace();
-          }
-
-        return "insert";
+            try {
+                PreparedStatement prstatement = connection.prepareStatement("insert into users (name,surname,email,address) values(?,?,?,?)");
+                prstatement.setString(1, users.getName());
+                prstatement.setString(2, users.getSurname());
+                prstatement.setString(3, users.getEmail());
+                prstatement.setString(4, users.getAddress());
+                prstatement.execute();
+                prstatement.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }else {return "the first and surname name field is required";}
+        return "user insert";
     }
 
     @Override
     public String deleteDB(int id)  {
-
         Connection connection = SinglConectJdbc.Con();
         try {
-
             PreparedStatement prstatement = connection.prepareStatement("delete from users where id=?");
             prstatement.setInt(1, id);
             prstatement.executeUpdate();
             prstatement.close();
-
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-        return "delete";
+        return "user delete";
     }
 
     @Override
-    public String updateDB(Users users, int id){//int id, String name, String surname, String email, String address){
-
-        Connection connection = SinglConectJdbc.Con();
-        try {
-
-            PreparedStatement prstatement = connection.prepareStatement("update users SET name =? , surname=?, birthDate=?,address=?  where id=?");
-            prstatement.setString(1, users.getName());
-            prstatement.setString(2, users.getSurname());
-            prstatement.setString(3, users.getBirthDate());
-            prstatement.setString(4, users.getAddress());
-            prstatement.setInt(5, id);
-            prstatement.executeUpdate();
-            prstatement.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
-        return "update";
+    public String updateDB(Users users, int id){
+        if(!(users.getName().equals("")||users.getSurname().equals(""))) {
+            Connection connection = SinglConectJdbc.Con();
+            try {
+                PreparedStatement prstatement = connection.prepareStatement("update users SET name =? , surname=?, email=?,address=?  where id=?");
+                prstatement.setString(1, users.getName());
+                prstatement.setString(2, users.getSurname());
+                prstatement.setString(3, users.getEmail());
+                prstatement.setString(4, users.getAddress());
+                prstatement.setInt(5, id);
+                prstatement.executeUpdate();
+                prstatement.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }else {return "the first and surname name field is required";}
+        return "user update";
     }
 
 
@@ -82,19 +73,14 @@ public class OperationsDb implements DbJdbcOperations{
             while (resultSet.next())
             {
                 Users users=new Users();
-
                 users.setId(resultSet.getInt("id"));
                 users.setName(resultSet.getString("name"));
                 users.setSurname(resultSet.getString("surname"));
-                users.setBirthDate(resultSet.getString("birthDate"));
+                users.setEmail(resultSet.getString("email"));
                 users.setAddress(resultSet.getString("address"));
                 list.add(users);
-
-
             }
-
             resultSet.close();
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -113,23 +99,18 @@ public class OperationsDb implements DbJdbcOperations{
             ResultSet resultSet= preparedStatement.executeQuery();
             while (resultSet.next())
             {
-
                 Users users=new Users();
                 users.setId(resultSet.getInt("id"));
                 users.setName(resultSet.getString("name"));
                 users.setSurname(resultSet.getString("surname"));
-                users.setBirthDate(resultSet.getString("birthDate"));
+                users.setEmail(resultSet.getString("email"));
                 users.setAddress(resultSet.getString("address"));
                 list.add(users);
-
             }
-
            resultSet.close();
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
         return list;
     }
 

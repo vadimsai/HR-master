@@ -22,29 +22,32 @@ public class UserRestManagment implements DBRestOperation  {
 
     @Override
     public String persist(Users user) {
-        em.persist(user);
-        return "User persist";
+        if(!(user.getName().equals("") || user.getSurname().equals(""))){
+        em.persist(user);}else {return "the first and surname name field is required";}
+        return "user persist";
     }
 
     @Override
-    public String merge(int id, String name, String surname, String birthDate, String address) {
-        Users user = em.find(Users.class, id);
-        if(user!=null) {
-            user.setName(name);user.setSurname(surname);
-            user.setBirthDate(birthDate);user.setAddress(address);
-            em.merge(user);
-        }
-        return "User update";
+    public String merge(int id, String name, String surname, String email, String address) {
+        if(!(name.equals("")||surname.equals(""))) {
+            Users user = em.find(Users.class, id);
+            if (user != null) {
+                user.setName(name);
+                user.setSurname(surname);
+                user.setEmail(email);
+                user.setAddress(address);
+                em.merge(user);
+            } else { return "the user does not exist"; }
+        }else {return "the first and surname name field is required";}
+        return "user merge";
     }
 
     @Override
     public String remove(int id) {
         Users user = em.find(Users.class, id);
         if (user!=null) {em.remove(user); }
-        else {
-            System.out.println(" Введите правильный id пользователя ");
-        }
-        return "User delete";
+        else { return "there is no user with this id"; }
+        return "user delete";
     }
 
     @Override

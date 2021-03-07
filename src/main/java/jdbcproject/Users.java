@@ -7,18 +7,18 @@ public class Users implements Serializable {
     int id;
     String name;
     String surname;
-    String birthDate;
+    String email;
     String address;
 
 
     public Users() {
     }
 
-    public Users(String name,String surname,String birthDate, String address) {
+    public Users(String name,String surname,String email, String address) {
         super();
         this.name = name;
         this.surname = surname;
-        this.birthDate = birthDate;
+        this.email = email;
         this.address = address;
     }
 
@@ -41,12 +41,12 @@ public class Users implements Serializable {
     }
 
 
-    public String getBirthDate() {
-        return birthDate;
+    public String getEmail() {
+        return email;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSurname() {

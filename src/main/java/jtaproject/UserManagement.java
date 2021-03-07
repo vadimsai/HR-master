@@ -17,28 +17,37 @@ public class UserManagement implements DBOperations{
 
 
     @Override
-    public void persist(Users user) {
-        em.persist(user);
+    public String persist(Users user) {
+
+       if(!(user.getName().equals("") || user.getSurname().equals(""))){
+       em.persist(user);}else {return "the first and surname name field is required";}
+       return "user persist";
     }
+
+
+
     @Override
-    public void merge(int id, String name, String surname, String birthDate, String address)
-        {
+    public String merge(int id, String name, String surname, String email, String address)
+        { if(!(name.equals("")||surname.equals(""))) {
             Users user = em.find(Users.class, id);
-            if(user!=null) {
-              user.setName(name);user.setSurname(surname);
-              user.setBirthDate(birthDate);user.setAddress(address);
-              em.merge(user);
-              }
+            if (user != null) {
+                user.setName(name);
+                user.setSurname(surname);
+                user.setEmail(email);
+                user.setAddress(address);
+                em.merge(user);
+            }else {return "the user does not exist";}
+        }else {return "the first and surname name field is required";}
+        return "user merge";
         }
 
 
     @Override
-    public void remove(int id) {
+    public String remove(int id) {
         Users user = em.find(Users.class, id);
         if (user!=null) {em.remove(user); }
-        else {
-            System.out.println(" Введите правильный id пользователя ");
-        }
+        else {return "there is no user with this id"; }
+        return "user remove";
     }
 
     @Override

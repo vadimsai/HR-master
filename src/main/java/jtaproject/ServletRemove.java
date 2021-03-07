@@ -18,9 +18,9 @@ public class ServletRemove extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int id= Integer.parseInt(request.getParameter("id"));
-        dbOperations.remove(id);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        String rem=dbOperations.remove(id);
+        request.setAttribute("rem",rem);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 

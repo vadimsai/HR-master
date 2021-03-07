@@ -22,19 +22,14 @@ public class ControllerWeather extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
 
-       String c= m.getW(request.getParameter("City"));
-        request.setAttribute("C",c);
+        String weather= m.getW(request.getParameter("City"));
+        request.setAttribute("weather",weather);
 
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Weather.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/Weather.jsp");
-//        requestDispatcher.forward(request, response);
-
     }
 }

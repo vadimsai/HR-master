@@ -21,7 +21,7 @@ public class ServletGetAll extends HttpServlet {
         List<Users> list= dbOperations.selectAll();
        request.setAttribute("list",list);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 

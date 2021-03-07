@@ -29,7 +29,7 @@ public class ServletGetAllJdbc extends HttpServlet {
         request.setAttribute("listj",listj);
 
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
     }
 }

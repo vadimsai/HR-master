@@ -8,8 +8,8 @@ import java.util.List;
 
 @Local
 public interface DBOperations {
-    public void persist(Users user);
-    public void merge(int id, String name, String surname, String birthDate, String address);
-    public void remove(int id);
+    public String persist(Users user);
+    public String merge(int id, String name, String surname, String email, String address);
+    public String remove(int id);
     public List<Users> selectAll();
 }

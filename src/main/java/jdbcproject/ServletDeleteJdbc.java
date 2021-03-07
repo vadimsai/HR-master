@@ -29,9 +29,9 @@ public class ServletDeleteJdbc extends HttpServlet {
 
        int id= Integer.parseInt(request.getParameter("id"));
         System.out.println(id);
-        dbJdbcOperations.deleteDB(id);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("DB.jsp");
+        String del=dbJdbcOperations.deleteDB(id);
+        request.setAttribute("del",del);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
 
     }
