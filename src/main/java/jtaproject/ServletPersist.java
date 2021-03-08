@@ -14,6 +14,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ *
+ * Servlet insert user for JTA module
+ *
+ */
+
 @WebServlet("/ServletPersist")
 public class ServletPersist extends HttpServlet {
 

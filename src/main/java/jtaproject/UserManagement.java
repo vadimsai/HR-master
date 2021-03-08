@@ -8,6 +8,11 @@ import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *
+ * class UserManagement-  implementation of database access methods for JTA module
+ *
+ */
 
 @LocalBean
 @Singleton

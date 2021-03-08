@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ *
+ * Сonnecting to the database for JDBC module
+ *
+ */
+
 public class SinglConectJdbc {
 
     private static Connection connection;

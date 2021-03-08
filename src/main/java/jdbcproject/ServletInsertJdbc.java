@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ *
+ * Servlet insert user for JDBC module
+ *
+ */
+
+
 @WebServlet("/ServletInsertJdbc")
 public class ServletInsertJdbc extends HttpServlet {
 

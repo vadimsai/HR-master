@@ -7,6 +7,13 @@ import javax.ejb.Local;
 import javax.ejb.Singleton;
 import java.util.List;
 
+/**
+*
+* @Interface for restful service module
+*
+*/
+
+
 @Local
 public interface DBRestOperation {
     public String persist(Users user);

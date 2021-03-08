@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+*
+* ControllerWeather get weather
+*
+*/
+
 @WebServlet("/ControllerWeather")
 public class ControllerWeather extends HttpServlet {
 

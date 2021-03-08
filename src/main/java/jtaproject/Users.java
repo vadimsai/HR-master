@@ -10,6 +10,18 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ *
+ * class Users- create table for all modules and
+ * performing operations with users for JTA module
+ *
+ *
+ * @DataSourceDefinitions if we can't register the connection in the tomcat server
+ *
+ *
+ * @XmlRootElement @return in XML format for restful service module
+ */
+
 @DataSourceDefinitions(
         @DataSourceDefinition( name ="Definition", user="hrhr2",
                 password = "hrhr", url ="jdbc:mysql://localhost:3306/sai",

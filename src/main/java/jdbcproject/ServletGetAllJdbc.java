@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ *
+ * Servlet get all users for JDBC module
+ *
+ */
+
 @WebServlet("/ServletGetAllJdbc")
 public class ServletGetAllJdbc extends HttpServlet {
 

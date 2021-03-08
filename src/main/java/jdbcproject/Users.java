@@ -2,6 +2,12 @@ package jdbcproject;
 
 import java.io.Serializable;
 
+/**
+*
+* class Users- performing operations with users for JDBC module
+*
+* */
+
 public class Users implements Serializable {
 
     int id;

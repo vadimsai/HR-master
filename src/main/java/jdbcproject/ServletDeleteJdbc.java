@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ *
+ * Servlet delete user for JDBC module
+ *
+ */
+
 @WebServlet( "/ServletDeleteJdbc")
 public class ServletDeleteJdbc extends HttpServlet {
 
@@ -27,7 +33,7 @@ public class ServletDeleteJdbc extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-       int id= Integer.parseInt(request.getParameter("id"));
+        int id= Integer.parseInt(request.getParameter("id"));
         System.out.println(id);
         String del=dbJdbcOperations.deleteDB(id);
         request.setAttribute("del",del);

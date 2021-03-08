@@ -10,13 +10,35 @@ import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
 import java.util.List;
 
-
+/**
+ *
+ * restful service implementation
+ *
+ *To access the services you can use the extension for chrome "Talend API Tester - Free Edition"
+ * Service URI: http://localhost:8080/HrProject_war/restDB
+ */
 @Path("/restDB")
 public class RestService  {
 
     @EJB
     DBRestOperation dbRestOperation;
 
+
+    /**
+     *
+     * for all methods with a return value String
+     *
+     * @return String
+     *
+     * i am building a URI from the location of the jsp page, and adding a
+     * query parameter to the end of the URI.
+     * So the redirect will go to http://localhost:8080/HrProject_war/site2.jsp?message=<the message>
+     *
+     *
+     * Response persist(String name, String surname, String email, String address)
+     *
+     * @POST http://localhost:8080/HrProject_war/restDB/persist
+     */
     @POST
     @Path("/persist")
     @Produces({"text/plain"})
@@ -34,6 +56,12 @@ public class RestService  {
     }
 
 
+    /**
+    * Response update(int id, String name, String surname, String email, String address)
+    *
+    * @POST http://localhost:8080/HrProject_war/restDB/update
+    *
+    */
     @POST
     @Path("/update")
     @Produces({"text/plain"})
@@ -51,7 +79,12 @@ public class RestService  {
         return  Response.seeOther(uri).build();
     }
 
-
+    /**
+    * Response delete(int id)
+    *
+    * @POST  http://localhost:8080/HrProject_war/restDB/delete
+    *
+    */
     @POST
     @Path("/delete")
     @Produces("text/plain")
@@ -63,6 +96,12 @@ public class RestService  {
        return  Response.seeOther(uri).build();
     }
 
+    /**
+    * @return List<Users>
+    *
+    *  @GET http://localhost:8080/HrProject_war/restDB/Allxml
+    *
+    */
     @GET
     @Path("/Allxml")
     @Produces(MediaType.APPLICATION_XML)
@@ -72,6 +111,12 @@ public class RestService  {
 
       return list;
     }
+
+    /**
+     * @return List<Users>
+     *
+     *  @GET http://localhost:8080/HrProject_war/restDB/Alljson
+     * */
     @GET
     @Path("/Alljson")
     @Produces(MediaType.APPLICATION_JSON)

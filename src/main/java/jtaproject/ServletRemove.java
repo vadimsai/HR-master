@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ *
+ * Servlet delete user for JTA module
+ *
+ */
+
 @WebServlet("/ServletRemove")
 public class ServletRemove extends HttpServlet {
 

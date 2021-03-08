@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
 
+
+/**
+ *
+ * class OperationsDb-  implementation of database access methods for JDBC module
+ *
+ */
+
 public class OperationsDb implements DbJdbcOperations{
 
     @Override

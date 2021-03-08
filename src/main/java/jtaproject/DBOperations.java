@@ -6,6 +6,12 @@ import javax.transaction.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *
+ * @Interface for JTA module
+ *
+ */
+
 @Local
 public interface DBOperations {
     public String persist(Users user);

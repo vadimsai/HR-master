@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ *
+ * Servlet get all users for JTA module
+ *
+ */
+
 @WebServlet("/ServletGetAll")
 public class ServletGetAll extends HttpServlet {
 

@@ -10,7 +10,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
-
+/**
+*
+* class UserRestManagment-  implementation of database access methods for restful service
+*
+*/
 
 @LocalBean
 @Singleton

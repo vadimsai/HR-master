@@ -5,6 +5,11 @@ import javax.enterprise.context.SessionScoped;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ *
+ * @Interface for JDBC module
+ *
+ */
 
 public interface DbJdbcOperations {
      String insertDB(Users users);

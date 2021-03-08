@@ -23,6 +23,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *
+ * Servlet update user for JTA module
+ *
+ */
+
 @WebServlet("/ServletEdit")
 public class ServletEdit extends HttpServlet {
 

@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ *
+ * Servlet update user for JDBC module
+ *
+ */
+
 @WebServlet("/ServletUpdateJdbc")
 public class ServletUpdateJdbc extends HttpServlet {
 

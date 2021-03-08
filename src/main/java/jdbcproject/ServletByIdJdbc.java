@@ -11,6 +11,12 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *
+ * Servlet get user by id for JDBC module
+ *
+ */
+
 @WebServlet("/ServletByIdJdbc")
 public class ServletByIdJdbc extends HttpServlet {
 

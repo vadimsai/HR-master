@@ -8,9 +8,21 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
+/**
+ *
+ * ModelWeather - gets the weather in the city via the API
+ *
+ */
+
 @Singleton
 public class ModelWeather {
 
+
+    /**
+    *
+    * @return String (HTML format)
+    *
+    */
     public String getW(String city){
        if (city.equals("")){return "Enter the city";}
        else {
