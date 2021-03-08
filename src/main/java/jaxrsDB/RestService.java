@@ -15,6 +15,8 @@ import java.util.List;
  *
  * @Path restful service implementation
  *
+ * the user class in the jta module
+ *
  *To access the services you can use the extension for chrome "Talend API Tester - Free Edition"
  * Service URI: http://localhost:8080/HrProject_war/restDB
  */
