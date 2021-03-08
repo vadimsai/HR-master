@@ -22,10 +22,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @XmlRootElement @return in XML format for restful service module
  */
 
-@DataSourceDefinitions(
+/*@DataSourceDefinitions(
         @DataSourceDefinition( name ="Definition", user="hrhr2",
                 password = "hrhr", url ="jdbc:mysql://localhost:3306/sai",
-                className = "com.mysql.cj.jdbc.Driver"))
+                className = "com.mysql.cj.jdbc.Driver"))*/
 
 @XmlRootElement
 @Entity

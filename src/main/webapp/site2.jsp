@@ -20,11 +20,12 @@
         <%@include file='css/css2.css' %>
     </style>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/css2.css"/>
 </head>
 <body>
 <div class="ref">
-    <a href="http://localhost:8080/HrProject_war/html/site.html" class="button" >ПЕРЕЙТИ НА ГЛАВНУЮ</a>
+    <a href="http://localhost:8080/HrProject-1.0-SNAPSHOT/pictures/site.html" class="button" >ПЕРЕЙТИ НА ГЛАВНУЮ</a>
 </div>
 
 
@@ -37,7 +38,7 @@
 
 
 <section class="zada">
-    <h5>ЗАДАНИЕ</h5>
+    <h4>ЗАДАНИЕ</h4>
     <div class="content">
         <p>Необходимо разработать веб-приложение, позволяющее управлять пользователями
             (создавать, редактировать, просматривать список и детали, удалять)
@@ -54,7 +55,7 @@
         <p>Задание реализованно в трех вариантах: 1 - jdbc+servlet, 2 - jta+ejb+hibernate, 3 - restw+jta+ejb+hibernate.
             В базе MySql с одной-общей таблицей для всех вариантов.</p>
 
-        Реализацию смотрите ниже, также прилагаю ссылку на репозиторий GitHab с реализацией данного задания
+        <p>Реализацию смотрите ниже, также прилагаю ссылку на репозиторий GitHab с реализацией данного задания</p>
 
         <div >
             <a href="https://github.com/vadimsai/HR-master.git/" target="_blank" >https://github.com/vadimsai/HR-master.git</a>
