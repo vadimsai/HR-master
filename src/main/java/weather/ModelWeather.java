@@ -9,7 +9,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * ModelWeather - gets the weather in the city via the API
  *
  */

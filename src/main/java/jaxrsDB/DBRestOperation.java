@@ -8,6 +8,7 @@ import javax.ejb.Singleton;
 import java.util.List;
 
 /**
+*@autor VADIM NOVIKOV
 *
 * @Interface for restful service module
 *

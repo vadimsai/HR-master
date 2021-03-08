@@ -126,7 +126,7 @@
             </div>
 
             <div class="form-group">
-                <input class="inputM" type="number" name="id" placeholder="Введите id пользователя">
+                <input class="inputM" type="number" name="id" placeholder="Введите id пользователя" required>
                 <input class="input" type="text" name="name" placeholder="Введите имя пользователя">
                 <input class="input" type="text" name="surname" placeholder="Введите surname">
                 <input class="input" type="text" name="email" placeholder="Введите email">
@@ -143,7 +143,7 @@
             </div>
 
             <div class="formR">
-                <input class="inputR" type="number" name="id" placeholder="id">
+                <input class="inputR" type="number" name="id" placeholder="id" required>
             </div>
             ${rem}
         </form>

@@ -3,13 +3,14 @@ package jdbcproject;
 import java.io.Serializable;
 
 /**
-*
+*@autor VADIM NOVIKOV
 * class Users- performing operations with users for JDBC module
 *
 * */
 
 public class Users implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     int id;
     String name;
     String surname;

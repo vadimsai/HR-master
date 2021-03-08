@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
-*
+*@autor VADIM NOVIKOV
 * ControllerWeather get weather
 *
 */

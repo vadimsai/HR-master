@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet get all users for JDBC module
  *
  */

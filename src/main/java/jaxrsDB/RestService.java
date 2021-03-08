@@ -11,8 +11,9 @@ import java.net.URI;
 import java.util.List;
 
 /**
+ *@autor VADIM NOVIKOV
  *
- * restful service implementation
+ * @Path restful service implementation
  *
  *To access the services you can use the extension for chrome "Talend API Tester - Free Edition"
  * Service URI: http://localhost:8080/HrProject_war/restDB
@@ -57,10 +58,10 @@ public class RestService  {
 
 
     /**
-    * Response update(int id, String name, String surname, String email, String address)
+    *
     *
     * @POST http://localhost:8080/HrProject_war/restDB/update
-    *
+    *  Response update(int id, String name, String surname, String email, String address)
     */
     @POST
     @Path("/update")
@@ -80,10 +81,11 @@ public class RestService  {
     }
 
     /**
-    * Response delete(int id)
+    *
     *
     * @POST  http://localhost:8080/HrProject_war/restDB/delete
     *
+    *  Response delete(int id)
     */
     @POST
     @Path("/delete")

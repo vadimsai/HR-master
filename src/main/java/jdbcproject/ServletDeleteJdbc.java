@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet delete user for JDBC module
  *
  */

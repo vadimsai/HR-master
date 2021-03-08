@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet delete user for JTA module
  *
  */

@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * class Users- create table for all modules and
  * performing operations with users for JTA module
  *

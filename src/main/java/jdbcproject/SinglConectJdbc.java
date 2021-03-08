@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Сonnecting to the database for JDBC module
  *
  */

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * @Interface for JDBC module
  *
  */

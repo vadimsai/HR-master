@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet get user by id for JDBC module
  *
  */

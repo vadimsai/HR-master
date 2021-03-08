@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet insert user for JTA module
  *
  */

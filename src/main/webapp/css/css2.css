@@ -1,5 +1,5 @@
 html{
-    font-size: 15px;
+    font-size: 20px;
 }
 
 body{
@@ -177,6 +177,7 @@ table.t th {
 table.t td:nth-of-type(1),
 table.t th:nth-of-type(1) {
 	width:5%;
+
 }
 table.t td:nth-of-type(2),
 table.t th:nth-of-type(2) {

@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 /**
+*@autor VADIM NOVIKOV
 *
 * class UserRestManagment-  implementation of database access methods for restful service
 *
@@ -27,7 +28,7 @@ public class UserRestManagment implements DBRestOperation  {
     @Override
     public String persist(Users user) {
         if(!(user.getName().equals("") || user.getSurname().equals(""))){
-        em.persist(user);}else {return "the first and surname name field is required";}
+        em.persist(user);}else {return "the name and surname field is required";}
         return "user persist";
     }
 
@@ -42,7 +43,7 @@ public class UserRestManagment implements DBRestOperation  {
                 user.setAddress(address);
                 em.merge(user);
             } else { return "the user does not exist"; }
-        }else {return "the first and surname name field is required";}
+        }else {return "the name and surname field is required";}
         return "user merge";
     }
 

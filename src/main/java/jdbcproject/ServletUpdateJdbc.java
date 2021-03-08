@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet update user for JDBC module
  *
  */

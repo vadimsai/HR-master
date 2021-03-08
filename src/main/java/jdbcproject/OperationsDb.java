@@ -7,6 +7,7 @@ import java.sql.Connection;
 
 
 /**
+ *@autor VADIM NOVIKOV
  *
  * class OperationsDb-  implementation of database access methods for JDBC module
  *
@@ -29,7 +30,7 @@ public class OperationsDb implements DbJdbcOperations{
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-        }else {return "the first and surname name field is required";}
+        }else {return "the name and surname field is required";}
         return "user insert";
     }
 
@@ -63,7 +64,7 @@ public class OperationsDb implements DbJdbcOperations{
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-        }else {return "the first and surname name field is required";}
+        }else {return "the name and surname field is required";}
         return "user update";
     }
 

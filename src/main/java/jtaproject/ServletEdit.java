@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ *@autor VADIM NOVIKOV
  * Servlet update user for JTA module
  *
  */
