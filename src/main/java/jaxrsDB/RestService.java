@@ -18,7 +18,7 @@ import java.util.List;
  * the user class in the jta module
  *
  *To access the services you can use the extension for chrome "Talend API Tester - Free Edition"
- * Service URI: http://localhost:8080/HrProject_war/restDB
+ * Service URI: http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB
  */
 @Path("/restDB")
 public class RestService  {
@@ -35,12 +35,12 @@ public class RestService  {
      *
      * i am building a URI from the location of the jsp page, and adding a
      * query parameter to the end of the URI.
-     * So the redirect will go to http://localhost:8080/HrProject_war/site2.jsp?message=<the message>
+     * So the redirect will go to http://localhost:8080/Hr/site2.jsp?message=<the message>
      *
      *
      * Response persist(String name, String surname, String email, String address)
      *
-     * @POST http://localhost:8080/HrProject_war/restDB/persist
+     * @POST http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/persist
      */
     @POST
     @Path("/persist")
@@ -52,7 +52,7 @@ public class RestService  {
     {
         Users users=new Users(name,surname,email,address);
         String message= dbRestOperation.persist(users);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/site2.jsp").
+        URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("perr",message).build();
 
         return  Response.seeOther(uri).build();
@@ -62,7 +62,7 @@ public class RestService  {
     /**
     *
     *
-    * @POST http://localhost:8080/HrProject_war/restDB/update
+    * @POST http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/update
     *  Response update(int id, String name, String surname, String email, String address)
     */
     @POST
@@ -75,7 +75,7 @@ public class RestService  {
                          @FormParam("address") String address)
     {
         String message= dbRestOperation.merge(id,name,surname,email,address);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/site2.jsp").
+        URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("merr",message).build();
 
 
@@ -85,7 +85,7 @@ public class RestService  {
     /**
     *
     *
-    * @POST  http://localhost:8080/HrProject_war/restDB/delete
+    * @POST  http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/delete
     *
     *  Response delete(int id)
     */
@@ -95,7 +95,7 @@ public class RestService  {
     public Response delete(@FormParam("id") int id)
     {
       String message= dbRestOperation.remove(id);
-        URI uri = UriBuilder.fromPath("http://localhost:8080/HrProject_war/site2.jsp").
+        URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("remr",message).build();
        return  Response.seeOther(uri).build();
     }
@@ -103,7 +103,7 @@ public class RestService  {
     /**
     * @return List<Users>
     *
-    *  @GET http://localhost:8080/HrProject_war/restDB/Allxml
+    *  @GET http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/Allxml
     *
     */
     @GET
@@ -119,7 +119,7 @@ public class RestService  {
     /**
      * @return List<Users>
      *
-     *  @GET http://localhost:8080/HrProject_war/restDB/Alljson
+     *  @GET http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/Alljson
      * */
     @GET
     @Path("/Alljson")

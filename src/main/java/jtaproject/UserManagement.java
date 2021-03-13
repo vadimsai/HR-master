@@ -5,6 +5,7 @@ import javax.ejb.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class UserManagement implements DBOperations{
                 user.setEmail(email);
                 user.setAddress(address);
                 em.merge(user);
+
             }else {return "the user does not exist";}
         }else {return "the name and surname field is required";}
         return "user merge";

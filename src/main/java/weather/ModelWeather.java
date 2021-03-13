@@ -1,6 +1,7 @@
 package weather;
 
 
+import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -41,7 +42,7 @@ public class ModelWeather {
            } catch (Exception e) {
                System.out.println("UPS");
                e.printStackTrace();
-               return null;
+               return "Connection problems openweathermap.org. Try again later";
            }
            String d = String.valueOf(lines);
            return d;

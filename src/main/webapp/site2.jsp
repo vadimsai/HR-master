@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+
     <link rel="preconnect" href="https://fonts.google.com/">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,16 @@
     <style>
         <%@include file='css/css2.css' %>
     </style>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/css2.css"/>
 </head>
 <body>
+
 <div class="ref">
-    <a href="http://localhost:8080/HrProject-1.0-SNAPSHOT/pictures/site.html" class="button" >ПЕРЕЙТИ НА ГЛАВНУЮ</a>
+    <a href="http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/site.html" class="button" >ПЕРЕЙТИ НА ГЛАВНУЮ</a>
 </div>
 
-
-<small hidden>
-    ॐ भूर्भुवः स्वः
-    तत् सवितुर्वरेण्यं
-    भर्गो देवस्य धीमहि
-    धियो यो नः प्रचोदयात्</small>
 
 
 
@@ -63,7 +58,7 @@
 
         <p>Также прилагаю ссылку на скачивание моего резюме</p>
         <div >
-            <a href="./файлы/1.1 1.GitIntroduction.pdf" target="_blank" download="">Скачать резюме</a>
+            <a href="./Резюме.pdf" target="_blank" download="">Скачать резюме</a>
         </div>
 
     </div>
@@ -75,7 +70,7 @@
 <section>
     <h4 class="e">JTA-EJB-HIBERNATE-MYSQL</h4>
 
-    <div class="contente">
+    <div class="contente" >
 
         <form class="all" action="ServletGetAll" method="POST">
 
@@ -277,7 +272,7 @@
 
     <div class="contentr">
 
-        <form class="persist" action="http://localhost:8080/HrProject_war/restDB/persist" method="POST">
+        <form class="persist" action="http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/persist" method="POST">
 
             <div class="button">
                 <button class="btn" type="submit">PERSIST</button>
@@ -294,7 +289,7 @@
         </form>
 
 
-        <form class="merge" action="http://localhost:8080/HrProject_war/restDB/update" method="POST">
+        <form class="merge" action="http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/update" method="POST">
 
             <div class="button">
                 <button class="btn" type="submit">MERGE</button>
@@ -312,20 +307,20 @@
         </form>
 
 
-        <form  class="getX" action="http://localhost:8080/HrProject_war/restDB/Allxml" method="GET">
+        <form  class="getX" action="http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/Allxml" method="GET">
             <div class="button">
                 <button class="btn" type="submit">GetALL XML</button>
             </div>
         </form>
 
-        <form class="getJ" action="http://localhost:8080/HrProject_war/restDB/Alljson" method="GET">
+        <form class="getJ" action="http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/Alljson" method="GET">
             <div class="button">
                 <button class="btn" type="submit">GetALL JSON</button>
             </div>
         </form>
 
 
-        <form class="remove" action="http://localhost:8080/HrProject_war/restDB/delete" method="POST">
+        <form class="remove" action="http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB/delete" method="POST">
 
             <div class="button">
                 <button class="btn" type="submit">REMOVE</button>
@@ -368,5 +363,11 @@
             ${weather}
     </div>
 </section>
+
+<small hidden>
+    ॐ भूर्भुवः स्वः
+    तत् सवितुर्वरेण्यं
+    भर्गो देवस्य धीमहि
+    धियो यो नः प्रचोदयात्</small>
 </body>
 </html>

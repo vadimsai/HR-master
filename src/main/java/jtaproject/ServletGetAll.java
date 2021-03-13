@@ -1,5 +1,7 @@
 package jtaproject;
 
+import jdbcproject.OperationsDb;
+
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,8 +21,8 @@ import java.util.List;
 @WebServlet("/ServletGetAll")
 public class ServletGetAll extends HttpServlet {
 
-    @EJB
-    DBOperations dbOperations;
+     @EJB
+     DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

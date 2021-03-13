@@ -20,7 +20,7 @@ public class OperationsDb implements DbJdbcOperations{
         if(!(users.getName().equals("")||users.getSurname().equals(""))) {
             Connection connection = SinglConectJdbc.Con();
             try {
-                PreparedStatement prstatement = connection.prepareStatement("insert into users (name,surname,email,address) values(?,?,?,?)");
+                PreparedStatement prstatement = connection.prepareStatement("insert into sai.Users (name,surname,email,address) values(?,?,?,?)");
                 prstatement.setString(1, users.getName());
                 prstatement.setString(2, users.getSurname());
                 prstatement.setString(3, users.getEmail());
@@ -38,7 +38,7 @@ public class OperationsDb implements DbJdbcOperations{
     public String deleteDB(int id)  {
         Connection connection = SinglConectJdbc.Con();
         try {
-            PreparedStatement prstatement = connection.prepareStatement("delete from users where id=?");
+            PreparedStatement prstatement = connection.prepareStatement("delete from sai.Users where id=?");
             prstatement.setInt(1, id);
             prstatement.executeUpdate();
             prstatement.close();
@@ -53,7 +53,7 @@ public class OperationsDb implements DbJdbcOperations{
         if(!(users.getName().equals("")||users.getSurname().equals(""))) {
             Connection connection = SinglConectJdbc.Con();
             try {
-                PreparedStatement prstatement = connection.prepareStatement("update users SET name =? , surname=?, email=?,address=?  where id=?");
+                PreparedStatement prstatement = connection.prepareStatement("update sai.Users SET name =? , surname=?, email=?,address=?  where id=?");
                 prstatement.setString(1, users.getName());
                 prstatement.setString(2, users.getSurname());
                 prstatement.setString(3, users.getEmail());
@@ -76,7 +76,7 @@ public class OperationsDb implements DbJdbcOperations{
         List<Users> list=new ArrayList<>();
         Connection connection = SinglConectJdbc.Con();
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement("select * from users");
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from sai.Users");
             ResultSet resultSet= preparedStatement.executeQuery();
             while (resultSet.next())
             {
@@ -102,7 +102,7 @@ public class OperationsDb implements DbJdbcOperations{
         List<Users> list =new ArrayList<>();
         Connection connection = SinglConectJdbc.Con();
        try {
-            PreparedStatement preparedStatement=connection.prepareStatement("select * from users where id=?");  // защита от инъекций
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from sai.Users where id=?");  // защита от инъекций
             preparedStatement.setInt(1,id);
             ResultSet resultSet= preparedStatement.executeQuery();
             while (resultSet.next())

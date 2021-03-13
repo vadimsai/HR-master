@@ -17,7 +17,7 @@ public class SinglConectJdbc {
           static{
               try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/sai", "hrhr2", "hrhr");
+                    connection= DriverManager.getConnection("jdbc:mysql://sai.c6mijjstehsi.us-east-2.rds.amazonaws.com:3306/sai",  "","" );
               } catch (ClassNotFoundException e) {
                   e.printStackTrace();
               } catch (SQLException throwables) {

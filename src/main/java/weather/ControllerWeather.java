@@ -2,6 +2,8 @@ package weather;
 
 
 
+import jdbcproject.OperationsDb;
+
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
