@@ -18,7 +18,7 @@ import java.io.IOException;
 @WebServlet("/ServletRemove")
 public class ServletRemove extends HttpServlet {
 
-
+    @EJB
     DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

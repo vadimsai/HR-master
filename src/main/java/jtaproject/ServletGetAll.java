@@ -21,6 +21,7 @@ import java.util.List;
 @WebServlet("/ServletGetAll")
 public class ServletGetAll extends HttpServlet {
 
+     @EJB
      DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

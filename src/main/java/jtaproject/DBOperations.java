@@ -2,6 +2,7 @@ package jtaproject;
 
 
 import javax.ejb.Local;
+import javax.ejb.LocalBean;
 import javax.transaction.*;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  *
  * @Interface for All
  */
-
+@Local
 public interface DBOperations {
     String insert(Users user);
     String update(int id, Users users);

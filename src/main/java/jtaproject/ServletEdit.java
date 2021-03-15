@@ -32,7 +32,7 @@ import java.util.List;
 @WebServlet("/ServletEdit")
 public class ServletEdit extends HttpServlet {
 
-
+    @EJB
     UserManagement userManagement;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

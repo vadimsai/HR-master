@@ -21,7 +21,7 @@ import java.io.IOException;
 
 @WebServlet("/ControllerWeather")
 public class ControllerWeather extends HttpServlet {
-
+    @EJB
     ModelWeather m;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

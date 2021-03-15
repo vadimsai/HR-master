@@ -15,7 +15,7 @@ import java.net.URLEncoder;
  *
  */
 
-
+@Singleton
 public class ModelWeather {
 
 

@@ -16,7 +16,8 @@ import java.util.List;
  */
 
 
-
+@LocalBean
+@Singleton
 public class UserManagement implements DBOperations{
     @PersistenceContext(name = "Students")
     EntityManager em;
