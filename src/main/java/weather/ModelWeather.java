@@ -32,9 +32,9 @@ public class ModelWeather {
                URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + URLEncoder.encode(city, "UTF-8") + "&units=metric&mode=html&appid=771a8c89dd0cdc9681c31d38cb745900");
                URLConnection connection = url.openConnection(); // открываем соединение
 
-               BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));  // записываем данные в переменную
+               BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                String line;
-               while ((line = reader.readLine()) != null) // читаем данные
+               while ((line = reader.readLine()) != null)
                {
                    lines.append(line + "\n");
                }
