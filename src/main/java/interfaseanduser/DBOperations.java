@@ -1,10 +1,7 @@
-package jtaproject;
+package interfaseanduser;
 
 
 import javax.ejb.Local;
-import javax.ejb.LocalBean;
-import javax.transaction.*;
-import java.util.Date;
 import java.util.List;
 
 /**

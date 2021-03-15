@@ -1,12 +1,13 @@
 package jtaproject;
 
 
+import interfaseanduser.DBOperations;
+import interfaseanduser.Users;
+
 import javax.ejb.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ import java.util.List;
 
 @LocalBean
 @Singleton
-public class UserManagement implements DBOperations{
+public class UserManagement implements DBOperations {
     @PersistenceContext(name = "Students")
     EntityManager em;
 
@@ -32,21 +33,20 @@ public class UserManagement implements DBOperations{
     }
 
 
-
-
-    public String updatem(int id, String name,String surname, String email, String address)
-        { if(!(name.equals("")||surname.equals(""))) {
+    public String update(int id, Users users)
+        {  { if(!(users.getName().equals("")||users.getSurname().equals(""))) {
             Users user = em.find(Users.class, id);
             if (user != null) {
-                user.setName(name);
-                user.setSurname(surname);
-                user.setEmail(email);
-                user.setAddress(address);
+                user.setName(users.getName());
+                user.setSurname(users.getSurname());
+                user.setEmail(users.getEmail());
+                user.setAddress(users.getAddress());
                 em.merge(user);
 
             }else {return "the user does not exist";}
         }else {return "the name and surname field is required";}
-        return "user merge";
+            return "user merge";
+        }
         }
 
 
@@ -71,8 +71,4 @@ public class UserManagement implements DBOperations{
         return null;
     }
 
-    @Override
-    public String update(int id, Users users) {
-        return "null";
-    }
 }

@@ -1,7 +1,7 @@
 package jdbcproject;
 
-import jtaproject.DBOperations;
-import jtaproject.Users;
+import interfaseanduser.DBOperations;
+import interfaseanduser.Users;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -72,8 +72,6 @@ public class OperationsDb implements DBOperations {
         }else {return "the name and surname field is required";}
         return "user update";
     }
-
-
 
 
     @Override

@@ -1,6 +1,7 @@
 package jdbcproject;
 
-import jtaproject.DBOperations;
+import interfaseanduser.DBOperations;
+import interfaseanduser.Users;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,11 +24,15 @@ public class ServletInsertJdbc extends HttpServlet {
 
     DBOperations dbOperations;
 
+    @Override
+    public void init() throws ServletException {
+        dbOperations=new OperationsDb();
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        jtaproject.Users users=new jtaproject.Users();
+        Users users=new Users();
         users.setName(request.getParameter("name"));
         users.setSurname(request.getParameter("surname"));
         users.setEmail(request.getParameter("email"));

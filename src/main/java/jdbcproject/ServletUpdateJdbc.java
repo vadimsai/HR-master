@@ -1,9 +1,8 @@
 package jdbcproject;
 
-import jtaproject.DBOperations;
-import jtaproject.Users;
+import interfaseanduser.DBOperations;
+import interfaseanduser.Users;
 
-import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +22,10 @@ public class ServletUpdateJdbc extends HttpServlet {
 
     DBOperations dbOperations;
 
-
+    @Override
+    public void init() throws ServletException {
+        dbOperations=new OperationsDb();
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");

@@ -1,10 +1,9 @@
 package jaxrest;
 
 
-import jtaproject.DBOperations;
-import jtaproject.UserManagement;
-import jtaproject.Users;
-import javax.ejb.EJB;
+import interfaseanduser.DBOperations;
+import interfaseanduser.Users;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,7 +13,7 @@ import java.util.List;
 
 /**
  *@autor VADIM NOVIKOV
- * The user, interface and implementation of database class in the jta module
+ *
  * To access the services you can use the extension for chrome "Talend API Tester - Free Edition"
  * Service URI: http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB
  */
@@ -69,8 +68,12 @@ public class RestService  {
                          @FormParam("email") String email,
                          @FormParam("address") String address)
     {
-        UserManagement userManagement=new UserManagement();
-        String message= userManagement.updatem(id,name,surname,email,address);
+        Users users=new Users();
+        users.setName(name);
+        users.setSurname(surname);
+        users.setEmail(email);
+        users.setAddress(address);
+        String message= dbOperations.update(id,users);
         URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("merr",message).build();
 

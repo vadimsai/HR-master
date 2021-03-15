@@ -1,6 +1,7 @@
 package jtaproject;
 
-import jdbcproject.OperationsDb;
+import interfaseanduser.DBOperations;
+import interfaseanduser.Users;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;

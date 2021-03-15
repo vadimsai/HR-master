@@ -1,5 +1,7 @@
 package jtaproject;
 
+import interfaseanduser.DBOperations;
+
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
