@@ -1,5 +1,8 @@
 package jdbcproject;
 
+import jtaproject.DBOperations;
+import jtaproject.Users;
+
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,21 +23,15 @@ import java.util.List;
 @WebServlet("/ServletByIdJdbc")
 public class ServletByIdJdbc extends HttpServlet {
 
-    DbJdbcOperations dbJdbcOperations;
-
-    @Override
-    public void init() throws ServletException {
-        dbJdbcOperations=new OperationsDb();
-    }
+    DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int id= Integer.parseInt(request.getParameter("id"));
-        List<Users> listji= dbJdbcOperations.getById(id);
+        List<Users> listji= dbOperations.getById(id);
         request.setAttribute("listji",listji);
 
 

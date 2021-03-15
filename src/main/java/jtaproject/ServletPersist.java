@@ -25,7 +25,7 @@ import java.util.Date;
 @WebServlet("/ServletPersist")
 public class ServletPersist extends HttpServlet {
 
-    @EJB
+
     DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class ServletPersist extends HttpServlet {
         String surname=request.getParameter("surname");
         String email=request.getParameter("email");
         String address=request.getParameter("address");
-        String pers=dbOperations.persist(new Users(name,surname,email,address));
+        String pers=dbOperations.insert(new Users(name,surname,email,address));
         request.setAttribute("pers",pers);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);

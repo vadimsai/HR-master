@@ -1,5 +1,7 @@
 package jdbcproject;
 
+import jtaproject.DBOperations;
+
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,22 +22,16 @@ import java.sql.SQLException;
 public class ServletDeleteJdbc extends HttpServlet {
 
 
-    DbJdbcOperations dbJdbcOperations;
-
-    @Override
-    public void init() throws ServletException {
-        dbJdbcOperations=new OperationsDb();
-    }
+    DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int id= Integer.parseInt(request.getParameter("id"));
         System.out.println(id);
-        String del=dbJdbcOperations.deleteDB(id);
+        String del=dbOperations.remove(id);
         request.setAttribute("del",del);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);

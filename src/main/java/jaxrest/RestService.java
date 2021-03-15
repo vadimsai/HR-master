@@ -1,6 +1,7 @@
-package jaxrsDB;
+package jaxrest;
 
 
+import jtaproject.DBOperations;
 import jtaproject.Users;
 import javax.ejb.EJB;
 import javax.ws.rs.*;
@@ -13,9 +14,9 @@ import java.util.List;
 /**
  *@autor VADIM NOVIKOV
  *
- * @Path restful service implementation
  *
- * the user class in the jta module
+ *
+ * the user, interface and implementation of database class in the jta module
  *
  *To access the services you can use the extension for chrome "Talend API Tester - Free Edition"
  * Service URI: http://ec2-18-188-100-175.us-east-2.compute.amazonaws.com:8080/HrProject-1.0-SNAPSHOT/restDB
@@ -23,10 +24,7 @@ import java.util.List;
 @Path("/restDB")
 public class RestService  {
 
-    @EJB
-    DBRestOperation dbRestOperation;
-
-
+    DBOperations dbOperations;
     /**
      *
      * for all methods with a return value String
@@ -51,7 +49,7 @@ public class RestService  {
                          @FormParam("address") String address)
     {
         Users users=new Users(name,surname,email,address);
-        String message= dbRestOperation.persist(users);
+        String message= dbOperations.insert(users);
         URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("perr",message).build();
 
@@ -74,7 +72,7 @@ public class RestService  {
                          @FormParam("email") String email,
                          @FormParam("address") String address)
     {
-        String message= dbRestOperation.merge(id,name,surname,email,address);
+        String message= dbOperations.updatem(id,name,surname,email,address);
         URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("merr",message).build();
 
@@ -94,7 +92,7 @@ public class RestService  {
     @Produces("text/plain")
     public Response delete(@FormParam("id") int id)
     {
-      String message= dbRestOperation.remove(id);
+      String message= dbOperations.remove(id);
         URI uri = UriBuilder.fromPath("site2.jsp").
                 queryParam("remr",message).build();
        return  Response.seeOther(uri).build();
@@ -111,7 +109,7 @@ public class RestService  {
     @Produces(MediaType.APPLICATION_XML)
   public List<Users> getALLx()
   {
-      List<Users> list=dbRestOperation.selectAll();
+      List<Users> list=dbOperations.selectAll();
 
       return list;
     }
@@ -126,7 +124,7 @@ public class RestService  {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Users> getALLj()
     {
-        List<Users> list=dbRestOperation.selectAll();
+        List<Users> list=dbOperations.selectAll();
 
         return list;
     }

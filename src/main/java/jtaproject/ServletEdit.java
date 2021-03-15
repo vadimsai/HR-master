@@ -32,7 +32,6 @@ import java.util.List;
 @WebServlet("/ServletEdit")
 public class ServletEdit extends HttpServlet {
 
-    @EJB
     DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,13 +43,12 @@ public class ServletEdit extends HttpServlet {
         String surname=request.getParameter("surname");
         String email= request.getParameter("email");
         String address=request.getParameter("address");
-        String merg=dbOperations.merge(id,name, surname, email, address);
+        String merg=dbOperations.updatem(id,name, surname, email, address);
         request.setAttribute("merg",merg);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);
 
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

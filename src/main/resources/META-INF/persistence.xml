@@ -31,8 +31,8 @@
          <property  name = " javax.persistence.jdbc.user "  value = " hrhr2 " />
          <property  name = " javax.persistence.jdbc.password "  value = " hrhr " />-->
          <property  name = " javax.persistence.jdbc.driver "  value = " com.mysql.cj.jdbc.Driver"/>
-         <property  name = " javax.persistence.jdbc.user "  value = "  " />
-         <property  name = " javax.persistence.jdbc.password "  value = "  " />
+         <property  name = " javax.persistence.jdbc.user "  value = " admin " />
+         <property  name = " javax.persistence.jdbc.password "  value = " 170684vad " />
          <property  name = " hibernate.dialect "  value = " org.hibernate.dialect.MySQL8Dialect " />
          <property  name = " hibernate.show_sql "  value = " true " />
          <property  name = " hibernate.hbm2ddl.auto "  value = " create " />

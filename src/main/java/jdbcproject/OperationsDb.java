@@ -1,5 +1,8 @@
 package jdbcproject;
 
+import jtaproject.DBOperations;
+import jtaproject.Users;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +16,10 @@ import java.sql.Connection;
  *
  */
 
-public class OperationsDb implements DbJdbcOperations{
+public class OperationsDb implements DBOperations {
 
     @Override
-    public String insertDB( Users users){
+    public String insert( Users users){
         if(!(users.getName().equals("")||users.getSurname().equals(""))) {
             Connection connection = SinglConectJdbc.Con();
             try {
@@ -34,8 +37,9 @@ public class OperationsDb implements DbJdbcOperations{
         return "user insert";
     }
 
+
     @Override
-    public String deleteDB(int id)  {
+    public String remove(int id)  {
         Connection connection = SinglConectJdbc.Con();
         try {
             PreparedStatement prstatement = connection.prepareStatement("delete from sai.Users where id=?");
@@ -48,8 +52,9 @@ public class OperationsDb implements DbJdbcOperations{
         return "user delete";
     }
 
+
     @Override
-    public String updateDB(Users users, int id){
+    public String update(int id,Users users){
         if(!(users.getName().equals("")||users.getSurname().equals(""))) {
             Connection connection = SinglConectJdbc.Con();
             try {
@@ -72,7 +77,7 @@ public class OperationsDb implements DbJdbcOperations{
 
 
     @Override
-    public List<Users> getAll()  {
+    public List<Users> selectAll()  {
         List<Users> list=new ArrayList<>();
         Connection connection = SinglConectJdbc.Con();
         try {
@@ -122,5 +127,8 @@ public class OperationsDb implements DbJdbcOperations{
         return list;
     }
 
-
+    @Override
+    public String updatem(int id, String name, String surname, String email, String address) {
+        return null;
+    }
 }

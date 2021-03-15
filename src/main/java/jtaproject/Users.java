@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @DataSourceDefinitions(
-        @DataSourceDefinition(name ="Definition", user="",
-                password = "", url ="jdbc:mysql://sai.c6mijjstehsi.us-east-2.rds.amazonaws.com:3306/sai",
+        @DataSourceDefinition(name ="Definition", user="admin",
+                password = "170684vad", url ="jdbc:mysql://sai.c6mijjstehsi.us-east-2.rds.amazonaws.com:3306/sai",
                 className = "com.mysql.cj.jdbc.Driver"))
 
 @XmlRootElement

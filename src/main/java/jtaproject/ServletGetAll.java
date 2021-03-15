@@ -21,13 +21,12 @@ import java.util.List;
 @WebServlet("/ServletGetAll")
 public class ServletGetAll extends HttpServlet {
 
-     @EJB
      DBOperations dbOperations;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         List<Users> list= dbOperations.selectAll();
-       request.setAttribute("list",list);
+        request.setAttribute("list",list);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);

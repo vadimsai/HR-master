@@ -1,5 +1,8 @@
 package jdbcproject;
 
+import jtaproject.DBOperations;
+import jtaproject.Users;
+
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,13 +21,8 @@ import java.io.IOException;
 @WebServlet("/ServletUpdateJdbc")
 public class ServletUpdateJdbc extends HttpServlet {
 
+    DBOperations dbOperations;
 
-    DbJdbcOperations dbJdbcOperations;
-
-    @Override
-    public void init() throws ServletException {
-        dbJdbcOperations=new OperationsDb();
-    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
@@ -36,7 +34,7 @@ public class ServletUpdateJdbc extends HttpServlet {
         users.setSurname(request.getParameter("surname"));
         users.setEmail(request.getParameter("email"));
         users.setAddress(request.getParameter("address"));
-        String upd=dbJdbcOperations.updateDB(users, id);
+        String upd=dbOperations.update(id, users);
         request.setAttribute("upd",upd);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);

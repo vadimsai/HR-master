@@ -11,11 +11,11 @@ import java.util.List;
 
 /**
  *@autor VADIM NOVIKOV
- * class UserManagement-  implementation of database access methods for JTA module
+ * class UserManagement-  implementation of database access methods for JTA module and restful service
  *
  */
 
-@LocalBean
+
 @Singleton
 public class UserManagement implements DBOperations{
     @PersistenceContext(name = "Students")
@@ -23,17 +23,20 @@ public class UserManagement implements DBOperations{
 
 
     @Override
-    public String persist(Users user) {
+    public String insert(Users user) {
 
        if(!(user.getName().equals("") || user.getSurname().equals(""))){
        em.persist(user);}else {return "the name and surname field is required";}
        return "user persist";
     }
 
-
+    @Override
+    public String update(int id, Users users) {
+        return "null";
+    }
 
     @Override
-    public String merge(int id, String name, String surname, String email, String address)
+    public String updatem(int id, String name,String surname, String email, String address)
         { if(!(name.equals("")||surname.equals(""))) {
             Users user = em.find(Users.class, id);
             if (user != null) {
@@ -63,6 +66,11 @@ public class UserManagement implements DBOperations{
         List<Users> list = query.getResultList();
 
         return list;
+    }
+
+    @Override
+    public List<Users> getById(int id) {
+        return null;
     }
 
 
