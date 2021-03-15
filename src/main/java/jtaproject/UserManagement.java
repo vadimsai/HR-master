@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 
-@Singleton
+
 public class UserManagement implements DBOperations{
     @PersistenceContext(name = "Students")
     EntityManager em;
@@ -30,12 +30,9 @@ public class UserManagement implements DBOperations{
        return "user persist";
     }
 
-    @Override
-    public String update(int id, Users users) {
-        return "null";
-    }
 
-    @Override
+
+
     public String updatem(int id, String name,String surname, String email, String address)
         { if(!(name.equals("")||surname.equals(""))) {
             Users user = em.find(Users.class, id);
@@ -73,5 +70,8 @@ public class UserManagement implements DBOperations{
         return null;
     }
 
-
+    @Override
+    public String update(int id, Users users) {
+        return "null";
+    }
 }

@@ -32,7 +32,8 @@ import java.util.List;
 @WebServlet("/ServletEdit")
 public class ServletEdit extends HttpServlet {
 
-    DBOperations dbOperations;
+
+    UserManagement userManagement;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
@@ -43,7 +44,7 @@ public class ServletEdit extends HttpServlet {
         String surname=request.getParameter("surname");
         String email= request.getParameter("email");
         String address=request.getParameter("address");
-        String merg=dbOperations.updatem(id,name, surname, email, address);
+        String merg=userManagement.updatem(id,name, surname, email, address);
         request.setAttribute("merg",merg);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("site2.jsp");
         requestDispatcher.forward(request, response);

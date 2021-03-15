@@ -126,9 +126,4 @@ public class OperationsDb implements DBOperations {
         }
         return list;
     }
-
-    @Override
-    public String updatem(int id, String name, String surname, String email, String address) {
-        return null;
-    }
 }
