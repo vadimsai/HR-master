@@ -13,12 +13,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  *@autor VADIM NOVIKOV
  * class Users- create table for all modules and
- * performing operations with users for JTA and Restful Service module
- *
- *
- * @DataSourceDefinitions if we can't register the connection in the tomcat server
- *
- *
  * @XmlRootElement @return in XML format for restful service module
  */
 

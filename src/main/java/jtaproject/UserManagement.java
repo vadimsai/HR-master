@@ -68,7 +68,10 @@ public class UserManagement implements DBOperations {
 
     @Override
     public List<Users> getById(int id) {
-        return null;
+        Query query = em.createQuery("select u from Users u where id=id");
+        List<Users> list = query.getResultList();
+
+        return list;
     }
 
 }
