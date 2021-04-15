@@ -21,7 +21,7 @@ import java.util.List;
 @Singleton
 public class UserManagement implements DBOperations {
     @PersistenceContext(name = "Students")
-    EntityManager em;
+   private EntityManager em;
 
 
     @Override
