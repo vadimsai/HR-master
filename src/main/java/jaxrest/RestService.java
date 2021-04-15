@@ -19,8 +19,9 @@ import java.util.List;
  */
 @Path("/restDB")
 public class RestService  {
-
-    DBOperations dbOperations;
+    
+    @EJB
+   private DBOperations dbOperations;
     /**
      *
      * for all methods with a return value String
